@@ -7,7 +7,7 @@ import time
 
 @pytest.fixture(scope="session")
 def release_name():
-    return "testdask"
+    return "customrelease"
 
 
 @pytest.fixture(scope="session")
