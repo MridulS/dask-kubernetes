@@ -606,6 +606,7 @@ class KubeCluster(SpecCluster):
         }
         self.worker_spec = {i: self.new_spec for i in range(self._n_workers)}
 
+        self.name = self.pod_template.metadata.generate_name
         await super()._start()
 
     @classmethod
@@ -678,9 +679,9 @@ class KubeCluster(SpecCluster):
     def namespace(self):
         return self.pod_template.metadata.namespace
 
-    @property
-    def name(self):
-        return self.pod_template.metadata.generate_name
+    # @property
+    # def name(self):
+    #     return self.pod_template.metadata.generate_name
 
     def scale(self, n):
         # A shim to maintain backward compatibility
