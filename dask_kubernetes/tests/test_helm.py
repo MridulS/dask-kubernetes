@@ -7,7 +7,7 @@ from distributed.core import Status
 
 @pytest.fixture(scope="session")
 def release_name():
-    return "testdask"
+    return "customrelease"
 
 
 @pytest.fixture(scope="session")
